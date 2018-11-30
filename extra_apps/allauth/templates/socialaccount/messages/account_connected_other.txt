@@ -1,0 +1,2 @@
+{% load i18n %}
+{% blocktrans %}该社交账号已经关联到另一个账户{% endblocktrans %}

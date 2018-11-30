@@ -1,0 +1,2 @@
+{% load i18n %}
+{% blocktrans %}主e-mail地址设置成功{% endblocktrans %}

@@ -1,0 +1,2 @@
+{% load i18n %}
+{% blocktrans %}主e-mail地址必须经过验证{% endblocktrans %}

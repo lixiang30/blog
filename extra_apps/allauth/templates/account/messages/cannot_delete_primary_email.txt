@@ -1,0 +1,2 @@
+{% load i18n %}
+{% blocktrans %}你不能移除你的主e-mail地址 ({{email}}){% endblocktrans %}

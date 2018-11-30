@@ -1,0 +1,65 @@
+{% load staticfiles %}
+<div class="card border-0 rounded-0 px-3 mb-2 mb-md-3 d-none d-lg-block" id="home-card">
+    <div class="card-header bg-white px-0">
+        <strong><i class="fa fa-paper-plane mr-2 f-17"></i>个人空间</strong>
+    </div>
+    <div class="card-body px-0 pt-3 pb-1">
+        <div class="row text-center">
+            <div class="col">
+                <a href="https://github.com/lixiang30" target="_blank" title="进入博主的Github查看博客源码">
+                    <img style="max-width:40px" alt="博主的github" src="{% static 'blog/img/github.png' %}">
+                    <p class="mt-2">Github</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#" target="_blank" title="查看网站建站历程">
+                    <img style="max-width:40px" alt="网站的建站历程" src="{% static 'blog/img/timeline.png' %}">
+                    <p class="mt-2">Timeline</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#" target="_blank" title="订阅博客">
+                    <img style="max-width:40px" alt="订阅博客RSS" src="{% static 'blog/img/rss.png' %}">
+                    <p class="mt-2">RSS订阅</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card w-100 mb-4">
+    <div class="card-body">
+        <h6 class="card-title font-weight-bold">标签云</h6>
+        <hr>
+        {% for tag in tags_cloud %}
+        <a href="{% url 'article:tag_articles' tag.slug %}"><span class="badge badge-pill badge-{{tag.cls_msg}} ">{{tag.chinese_name}}</span></a>
+        {% endfor %}
+
+    </div>
+</div>
+<div class="card w-100 mb-4">
+    <div class="card-body">
+        <h6 class="card-title font-weight-bold">最近文章</h6>
+        <hr>
+        <ul class="pl-4" style="list-style-type: decimal; color: goldenrod" id="latest_articles">
+            {% if latest_articles %}
+            {% for a in latest_articles %}
+            <li><a href="{% url 'article:article_detail' a.id %}">{{a.title}}</a></li>
+            {% endfor %}
+            {% else %}
+            <p>暂无</p>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+
+
+<ul class="list-group" id="my_website">
+    <li class="list-group-item disabled">常用网站</li>
+    <li class="list-group-item"><a href="https://blog.csdn.net/qq_35037977" target="_blank">Huu的CSDN博客</a></li>
+    <li class="list-group-item"><a href="https://github.com/HuuBaa" target="_blank">GitHub</a></li>
+    <li class="list-group-item"><a href="https://www.zhihu.com/" target="_blank">知乎</a></li>
+    <li class="list-group-item"><a href="https://www.v2ex.com/" target="_blank">V2EX</a></li>
+    <li class="list-group-item"><a href="https://regexper.com/" target="_blank">Regexper</a></li>
+</ul>
+

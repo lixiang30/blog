@@ -1,0 +1,58 @@
+{% extends 'article/base.html' %}
+{% load staticfiles %}
+
+{% block active-1 %}
+active
+{% endblock %}
+
+
+{% block content %}
+
+<div id="carouselExampleIndicators" class="carousel slide mb-lg-4 mb-2" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="{% url "article:article_detail" 4 %}">
+            <img class="d-block w-100" src="{{ MEDIA_URL }}1.png" alt="First slide"></a>
+    </div>
+    <div class="carousel-item">
+        <a href="{% url "article:article_detail" 1 %}">
+      <img class="d-block w-100" src="{{ MEDIA_URL }}2.png" alt="Second slide" ></a>
+    </div>
+    <div class="carousel-item">
+
+        <a href="{% url "article:article_detail" 2 %}">
+            <img class="d-block w-100" src="{{ MEDIA_URL }}1.png" alt="Third slide" ></a>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+    <div class="text-secondary font-weight-bold py-2 f-15 choice">
+{#                {% url 'blog:index' as base_index %}#}
+{#                {% url 'blog:index_hot' as hot_index %}#}
+                <a class="pb-2 {% if request.path == base_index %}active{% endif %}" href="{{ base_index }}">
+                    <i class="fa fa-bars mr-1"></i>时间排序</a>
+                <a class="pb-2 ml-4 {% if request.path == hot_index %}active{% endif %}" href="{{ hot_index }}">
+                    <i class="fa fa-fire mr-1"></i>热度排序</a>
+            </div>
+
+{% if articles %}
+    {% include "article/partials/_article_list.html" %}
+    <p class="text-center"><a href="{% url 'article:all_articles' %}" class="btn btn-outline-primary">查看更多文章>></a></p>
+{% else %}
+<p> 没有文章</p>
+{% endif%}
+
+{% endblock %}

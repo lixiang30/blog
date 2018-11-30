@@ -1,0 +1,2 @@
+{% load i18n %}
+{% blocktrans %}移除了e-mail地址{{email}}{% endblocktrans %}

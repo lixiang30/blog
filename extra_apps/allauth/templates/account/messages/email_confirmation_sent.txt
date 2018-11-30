@@ -1,0 +1,2 @@
+{% load i18n %}
+{% blocktrans %}验证e-mail已发送至 {{email}}{% endblocktrans %}

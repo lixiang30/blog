@@ -1,0 +1,4 @@
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans %}验证你的邮箱地址{% endblocktrans %}
+{% endautoescape %}

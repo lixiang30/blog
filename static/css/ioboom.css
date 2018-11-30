@@ -1,0 +1,79 @@
+@media (max-width: 768px) {
+    body{
+        font-size: 13px;
+    }
+    .sm-pd-5{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+body {
+    background-color: #eee;
+}
+
+/*sidebar*/
+#latest_articles li a:hover {
+    color: goldenrod;
+    text-decoration: none;
+}
+
+#my_website li a:hover {
+    color: goldenrod;
+    text-decoration: none;
+}
+
+/* all_tags */
+#tags li a:hover {
+    color: goldenrod;
+    text-decoration: none;
+}
+
+/*article_detail*/
+#bread li a:hover {
+    color: goldenrod;
+    text-decoration: none;
+}
+
+#article-body img{
+    width: 100%;
+}
+
+
+/* index */
+.article-title:hover {
+    color: goldenrod;
+}
+
+.shadow:hover {
+    box-shadow: 3px 3px 5px #aaa;
+}
+
+/*article_detail*/
+#toc li {
+    list-style-type: cjk-ideographic;
+    color: #0099ff;
+
+}
+
+#toc li a {
+    text-decoration: none;
+}
+
+#toc li a:hover {
+    color: goldenrod;
+}
+
+#toc li li {
+    list-style-type: decimal;
+    color: #0099ff;
+}
+
+#toc li li li {
+    list-style-type: lower-alpha;
+    color: #0099ff;
+}
+
+.errorlist{
+    margin-bottom: 0 !important
+}
